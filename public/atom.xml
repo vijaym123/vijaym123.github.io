@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Vijay Mahantesh]]></title>
+  <link href="http://vijaym.in/atom.xml" rel="self"/>
+  <link href="http://vijaym.in/"/>
+  <updated>2013-08-21T22:24:03+05:30</updated>
+  <id>http://vijaym.in/</id>
+  <author>
+    <name><![CDATA[Vijay Mahantesh SM]]></name>
+    <email><![CDATA[vijaym123.gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
