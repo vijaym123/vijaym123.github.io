@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-08-21T19:52:54+05:30</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[Vijay Mahantesh SM]]></title>
+  <link href="http://vijaym.in/atom.xml" rel="self"/>
+  <link href="http://vijaym.in/"/>
+  <updated>2013-08-21T20:12:11+05:30</updated>
+  <id>http://vijaym.in/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    
+    <name><![CDATA[Vijay Mahantesh SM]]></name>
+    <email><![CDATA[vijaym123.gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
