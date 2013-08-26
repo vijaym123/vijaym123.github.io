@@ -89,6 +89,10 @@ quora_button: true
 facebook_user: vijay.mahantesh.sm
 facebook_button: true
 
+#LinkedIn
+linkedin_user: vijaymahantesh
+linkedin_button: true
+
 # Pinboard
 pinboard_user:
 pinboard_count: 3
@@ -98,7 +102,7 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name:
+disqus_short_name: vijaymahantesh
 disqus_show_comment_count: false
 
 # Google Analytics
