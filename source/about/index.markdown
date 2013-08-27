@@ -10,7 +10,7 @@ Namaskara,
 
 I
 
-* am A CS guy by education. To be more specific completed undergraduate studies at PESIT.
+* am CS guy and the “Hello world” phrase is the first thing that comes to my mind whenever I'm starting anything new.
 * find TED videos very interesting and inspiring.
 * Love travelling. Especially long drives. 
 * am interested in photography. But not too much concerned about technicalities. 
