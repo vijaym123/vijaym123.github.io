@@ -1,0 +1,61 @@
+---
+layout: post
+title: "Twitter Data Collection and Storage"
+date: 2013-09-15 15:36
+comments: true
+categories: 
+- Twitter
+- AWS
+---
+Data collection and storage is the key to many projects. You have tons of data out there and you just want the part that is key to the problem. Yes, we are working a twitter virulence project to determine how virulent a tweet will go. In other words number of retweets it is going to have. We looked at <a href="http://snap.stanford.edu/data/twitter7.html" target="_blank">SNAP dataset</a> it has 467 million tweets collected from 20 million people covered over 7 month period. But the problem was this dataset was huge and most of it was junks, some spam messages too. Finding viral tweets and separating it out for the project was more than a herculean task. 
+
+So we decide to collect fresh data in real time. Collecting data in real time isn’t that easy job, as there are a lot of restrictions put along by twitter. Twitter streaming api came to our rescue. So how does it work?
+
+<script src="https://gist.github.com/vijaym123/6334874.js"></script>
+
+To a streaming client (python snippet) messages will be pushed indicating Tweets and other events have occurred, without any of the overhead associated with polling a REST endpoint. For more documentation refer link.
+
+For this kind of data collection we need a stable internet. Of course BSNL or any other services cannot provide it. :P We had this code running in AWS servers. The free usage tier from AWS has just 8gb of space. Having a DB kinda solution to store the tweets is really not an option because of the space constraint.
+
+Jugad solution, use directories and files to store the tweets. This is something basic which uses file operations and occupies less space compared to DB. Yes, here the tweets are not indexed.
+
+Having the infrastructure ready, we need to think about capturing viral tweets? After extensive search in twitter web, we made a list of people who have a good retweet count (Avg : 500 - 1000 ) and we tracked them using the streaming api. A glimpse of the list will reveal these name :
+Justin, Barack Obama, Taylor Swift, Rihana, Ronaldo, Britney Spears, Shakira, Ellen Degeneres, Bruno Mars, Selena Gomez, Justin timberlake etc. 
+
+Here is the link to <a href="https://github.com/vijaym123/tweets-dataset" target="_blank">tweets-data</a> set collected for a period of 1 month.
+
+## Stats about current dataset :
+* Number of tweets collected : 8227
+* Tweets with more than 1000 retweet : 1341
+
+## About the dataset
+This dataset is of 1.2 gb which was collected for nearly a month.  
+
+Each folder is named after the person-id. In each folder you have **user.info**. It is typically in this format :
+
+LilTunechi ( Name )
+IM YOUNG MONEY http://trukfit.com ( Bio )
+Mars ( Location as specified by twitter-user )
+Alaska ( Time-zone )
+2010-02-22 05:29:44 ( Profile created time in UTC )
+-28800 ( UTC-offset )
+true ( Verified )
+
+Other files are tweet files, named after there tweet-id. First line is the original tweet and the format is in this form : 
+
+**Tweet Message |||  length of tweet message ||| tweet-message created_at time ||| hashtags ||| followers_count at that point when he updated his status ||| hasLink**
+
+Eg :
+
+Rich Gang album right slime!! &amp; it's f#Kin awesome!!! ||| 66 ||| 2013-07-23 21:40:30 ||| [] ||| 12582328 ||| False
+
+Following lines are retweet details and it is the following format.
+
+**user id_str ||| retweet-time ||| retweeter's location ||| retweeter-virefied ||| screen-name of retweeter ||| bio**
+
+Eg :
+
+1511641856 ||| 2013-07-23 21:40:37 ||| Alexandria, PA  ||| False ||| LynetteCarter10 ||| #Arithmetic is being able to count up to twenty without taking off your #shoes. (Mickey Mouse)
+
+PS: This is the inaugural blog post of this website. :)
+
