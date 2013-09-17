@@ -8,7 +8,9 @@ footer: true
 ---
 Namaskara, 
 
-I
+Welcome to my home page. My name is Vijay. I am Computer Science Graduate student here at Northwestern, Evanston Campus. 
+
+**I**
 
 * am CS guy and the “Hello world” phrase is the first thing that comes to my mind whenever I'm starting anything new.
 * find TED videos very interesting and inspiring.
@@ -17,3 +19,10 @@ I
 * Occasionally click photos from handheld devices to compile memories.
 * believe "Quora is curiosity, never satisfied!". Yes, I am a huge fan of Quora !
 * have lived in Coorg, Mysore or Bangalore at some point or the other.
+
+##Contact Details :
+
+* Mail : vijaymahantesh@u.northwestern.edu
+* Phone : +1-847-660-4471
+
+Go ahead and crawl my website.
