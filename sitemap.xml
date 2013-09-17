@@ -2,26 +2,30 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://vijaym.in/blog/2013/09/15/twitterdatacollection/</loc>
-        <lastmod>2013-09-15T16:40:58-05:00</lastmod>
+        <lastmod>2013-09-17T12:35:15-05:00</lastmod>
     </url>
     <url>
         <loc>http://vijaym.in/about/</loc>
-        <lastmod>2013-09-15T15:44:08-05:00</lastmod>
+        <lastmod>2013-09-17T13:48:23-05:00</lastmod>
     </url>
     <url>
         <loc>http://vijaym.in/blog/archives/</loc>
-        <lastmod>2013-09-15T16:40:58-05:00</lastmod>
+        <lastmod>2013-09-17T12:35:15-05:00</lastmod>
     </url>
     <url>
         <loc>http://vijaym.in/blog/categories/</loc>
-        <lastmod>2013-09-15T15:44:08-05:00</lastmod>
+        <lastmod>2013-09-17T12:35:15-05:00</lastmod>
     </url>
     <url>
         <loc>http://vijaym.in/</loc>
-        <lastmod>2013-09-15T16:40:58-05:00</lastmod>
+        <lastmod>2013-09-17T12:37:04-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://vijaym.in/interests/</loc>
+        <lastmod>2013-09-17T13:27:05-05:00</lastmod>
     </url>
     <url>
         <loc>http://vijaym.in/robots.txt</loc>
-        <lastmod>2013-09-15T15:44:08-05:00</lastmod>
+        <lastmod>2013-09-17T12:35:15-05:00</lastmod>
     </url>
 </urlset>
