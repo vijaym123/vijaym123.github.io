@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: NetworkScience, | Vijay Mahantesh]]></title>
+  <link href="http://vijaym.in/blog/categories/networkscience/atom.xml" rel="self"/>
+  <link href="http://vijaym.in/"/>
+  <updated>2014-05-26T03:07:52-05:00</updated>
+  <id>http://vijaym.in/</id>
+  <author>
+    <name><![CDATA[Vijay Mahantesh SM]]></name>
+    <email><![CDATA[vijaym123.gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Oh SNAP!]]></title>
+    <link href="http://vijaym.in/blog/2014/05/26/oh-snap/"/>
+    <updated>2014-05-26T01:38:00-05:00</updated>
+    <id>http://vijaym.in/blog/2014/05/26/oh-snap</id>
+    <content type="html"><![CDATA[<p>For years, I have been using <a href="https://networkx.github.io/" target="_blank">NetworkX</a> and hadn’t found any good substitute which has fast execution as CPP with rapid development as python. <a href="http://snap.stanford.edu/snappy/index.html" target="_blank">SNAP</a> is a powerful tool which is aimed to be built this direction. For researches in network science, it provides tools to do general purpose and high performance system for analysis and manipulation of large networks.</p>
+
+<p>Installing SNAP-python in Linux, Mac OS X and Windows is given here in this <a href="http://snap.stanford.edu/snappy/index.html#introduction" target="_blank">website</a>.</p>
+
+<p>Sometimes when you are working on a library that is still under development it is better to use virtualenv. A Virtual Environment, put simply, is an isolated working copy of Python which allows you to work on a specific project without worry of affecting other projects. For more details about virtualenv please take a look at <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/" target="_blank">this</a>.</p>
+
+<p>I faced certain problems with virtualenv and SNAP with Mac OS X 10.9.3. After reading few manuals on shared libraries, I could resolve this.</p>
+
+<p>Here is the problem I faced:</p>
+
+<p>```python</p>
+
+<blockquote><blockquote><blockquote><p>import snap
+Fatal Python error: PyThreadState_Get: no current thread
+Abort trap: 6
+```
+So I thought of writing a step by step blog to help users to install SNAP successfully with virtualenv.</p></blockquote></blockquote></blockquote>
+
+<p>To create a virtualenv directory :
+<code>
+virtualenv --python=$(which python) --distribute --no-site-packages snap/
+</code>
+Change your working directory to snap. Activate virtualenv and then install numpy, graphviz.</p>
+
+<p><code>
+cd snap/
+source bin/activate
+pip install numpy
+pip install graphviz
+</code>
+Install gnuplot with homebrew. Download and install python extension for <a href="http://gnuplot-py.sourceforge.net/" target="_blank">gnuplot</a> within the virtualenv snap. Now comes the last step of downloading and installing SNAP.py library. Download SNAP repository from the <a href="http://snap.stanford.edu/snappy/release/" target="_blank">website</a> and place it in the working directoy (snap/).
+<code>
+tar zxvf snap-1.0-2.2-macosx10.7.5-x64-py2.7.tar.gz
+cd snap-1.0-2.2-macosx10.7.5-x64-py2.7
+sudo python setup.py install
+</code>
+Execute the following lines in python or in ipython.
+<code>python
+import snap
+</code>
+If you are getting the any errors related to PyThreadState_Get, then do the following.
+<code>
+install_name_tool -change bin/python /System/Library/Frameworks/Python.framework/Versions/2.7//lib/libpython2.7.dylib snap-1.0-2.2-macosx10.7.5-x64-py2.7/_snap.so
+</code>
+install_name_tool is used in Mac OS X to change dynamic shared library install names. Now try to run the snap example files. Voila! It should work.</p>
+]]></content>
+  </entry>
+  
+</feed>

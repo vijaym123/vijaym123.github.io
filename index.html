@@ -9,7 +9,7 @@
 	<meta name="author" content="Vijay Mahantesh SM">
 
 	
-	<meta name="description" content="Sep 15th, 2013 AWS, Twitter Twitter Data Collection and Storage Data collection and storage is the key to many projects. You have tons of data out &hellip;">
+	<meta name="description" content="May 26th, 2014 NetworkScience,, PyThreadState_Get, SNAP, Oh SNAP! For years, I have been using NetworkX and hadn’t found any good substitute which &hellip;">
 	
 
   <!-- http://t.co/dKP3o1e -->
@@ -113,6 +113,107 @@
   
 
 
+<time datetime="2014-05-26T01:38:00-05:00" data-updated="true" itemprop="datePublished">May 26<span>th</span>, 2014</time></div>
+		<div class="tags">
+
+
+	<a class='category' href='/blog/categories/networkscience/'>NetworkScience,</a>, <a class='category' href='/blog/categories/pythreadstate-get/'>PyThreadState_Get</a>, <a class='category' href='/blog/categories/snap/'>SNAP,</a>
+
+
+</div>
+		
+	</div>
+	<h1 class="title" itemprop="name"><a href="/blog/2014/05/26/oh-snap/" itemprop="url">Oh SNAP!</a></h1>
+	<div class="entry-content" itemprop="articleBody">
+		<p>For years, I have been using <a href="https://networkx.github.io/" target="_blank">NetworkX</a> and hadn’t found any good substitute which has fast execution as CPP with rapid development as python. <a href="http://snap.stanford.edu/snappy/index.html" target="_blank">SNAP</a> is a powerful tool which is aimed to be built this direction. For researches in network science, it provides tools to do general purpose and high performance system for analysis and manipulation of large networks.</p>
+
+<p>Installing SNAP-python in Linux, Mac OS X and Windows is given here in this <a href="http://snap.stanford.edu/snappy/index.html#introduction" target="_blank">website</a>.</p>
+
+<p>Sometimes when you are working on a library that is still under development it is better to use virtualenv. A Virtual Environment, put simply, is an isolated working copy of Python which allows you to work on a specific project without worry of affecting other projects. For more details about virtualenv please take a look at <a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/" target="_blank">this</a>.</p>
+
+<p>I faced certain problems with virtualenv and SNAP with Mac OS X 10.9.3. After reading few manuals on shared libraries, I could resolve this.</p>
+
+<p>Here is the problem I faced:</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">snap</span>
+</span><span class='line'><span class="n">Fatal</span> <span class="n">Python</span> <span class="n">error</span><span class="p">:</span> <span class="n">PyThreadState_Get</span><span class="p">:</span> <span class="n">no</span> <span class="n">current</span> <span class="n">thread</span>
+</span><span class='line'><span class="n">Abort</span> <span class="n">trap</span><span class="p">:</span> <span class="mi">6</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>So I thought of writing a step by step blog to help users to install SNAP successfully with virtualenv.</p>
+
+<p>To create a virtualenv directory :</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">virtualenv</span> <span class="o">--</span><span class="n">python</span><span class="o">=</span><span class="err">$</span><span class="p">(</span><span class="n">which</span> <span class="n">python</span><span class="p">)</span> <span class="o">--</span><span class="n">distribute</span> <span class="o">--</span><span class="n">no</span><span class="o">-</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span> <span class="n">snap</span><span class="o">/</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Change your working directory to snap. Activate virtualenv and then install numpy, graphviz.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">cd</span> <span class="n">snap</span><span class="o">/</span>
+</span><span class='line'><span class="n">source</span> <span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+</span><span class='line'><span class="n">pip</span> <span class="n">install</span> <span class="n">numpy</span>
+</span><span class='line'><span class="n">pip</span> <span class="n">install</span> <span class="n">graphviz</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Install gnuplot with homebrew. Download and install python extension for <a href="http://gnuplot-py.sourceforge.net/" target="_blank">gnuplot</a> within the virtualenv snap. Now comes the last step of downloading and installing SNAP.py library. Download SNAP repository from the <a href="http://snap.stanford.edu/snappy/release/" target="_blank">website</a> and place it in the working directoy (snap/).</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">tar</span> <span class="n">zxvf</span> <span class="n">snap</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">2.2</span><span class="o">-</span><span class="n">macosx10</span><span class="o">.</span><span class="mf">7.5</span><span class="o">-</span><span class="n">x64</span><span class="o">-</span><span class="n">py2</span><span class="o">.</span><span class="mf">7.</span><span class="n">tar</span><span class="o">.</span><span class="n">gz</span>
+</span><span class='line'><span class="n">cd</span> <span class="n">snap</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">2.2</span><span class="o">-</span><span class="n">macosx10</span><span class="o">.</span><span class="mf">7.5</span><span class="o">-</span><span class="n">x64</span><span class="o">-</span><span class="n">py2</span><span class="o">.</span><span class="mi">7</span>
+</span><span class='line'><span class="n">sudo</span> <span class="n">python</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Execute the following lines in python or in ipython.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="kn">import</span> <span class="nn">snap</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>If you are getting the any errors related to PyThreadState_Get, then do the following.</p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="n">install_name_tool</span> <span class="o">-</span><span class="n">change</span> <span class="nb">bin</span><span class="o">/</span><span class="n">python</span> <span class="o">/</span><span class="n">System</span><span class="o">/</span><span class="n">Library</span><span class="o">/</span><span class="n">Frameworks</span><span class="o">/</span><span class="n">Python</span><span class="o">.</span><span class="n">framework</span><span class="o">/</span><span class="n">Versions</span><span class="o">/</span><span class="mf">2.7</span><span class="o">//</span><span class="n">lib</span><span class="o">/</span><span class="n">libpython2</span><span class="o">.</span><span class="mf">7.</span><span class="n">dylib</span> <span class="n">snap</span><span class="o">-</span><span class="mf">1.0</span><span class="o">-</span><span class="mf">2.2</span><span class="o">-</span><span class="n">macosx10</span><span class="o">.</span><span class="mf">7.5</span><span class="o">-</span><span class="n">x64</span><span class="o">-</span><span class="n">py2</span><span class="o">.</span><span class="mi">7</span><span class="o">/</span><span class="n">_snap</span><span class="o">.</span><span class="n">so</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>install_name_tool is used in Mac OS X to change dynamic shared library install names. Now try to run the snap example files. Voila! It should work.</p>
+
+		
+		
+	</div>
+
+</article>
+
+
+    <article class="post" itemprop="blogPost" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="meta">
+		<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
 <time datetime="2013-09-15T15:36:00-05:00" data-updated="true" itemprop="datePublished">Sep 15<span>th</span>, 2013</time></div>
 		<div class="tags">
 
@@ -198,7 +299,7 @@ true ( Verified )</p>
 </div>
 			</div>
 			<footer id="footer" class="inner"><p>
-  Copyright &copy; 2013 - Vijay Mahantesh SM -
+  Copyright &copy; 2014 - Vijay Mahantesh SM -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 </footer>
