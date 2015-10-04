@@ -4,7 +4,7 @@
   <title><![CDATA[Vijay Mahantesh]]></title>
   <link href="http://vijaym.in/atom.xml" rel="self"/>
   <link href="http://vijaym.in/"/>
-  <updated>2014-05-26T03:32:07-05:00</updated>
+  <updated>2015-10-04T10:16:45-07:00</updated>
   <id>http://vijaym.in/</id>
   <author>
     <name><![CDATA[Vijay Mahantesh SM]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Oh SNAP!]]></title>
     <link href="http://vijaym.in/blog/2014/05/26/oh-snap/"/>
-    <updated>2014-05-26T01:38:00-05:00</updated>
+    <updated>2014-05-26T01:38:00-07:00</updated>
     <id>http://vijaym.in/blog/2014/05/26/oh-snap</id>
     <content type="html"><![CDATA[<p>For years, I have been using <a href="https://networkx.github.io/" target="_blank">NetworkX</a> and hadn’t found any good substitute which has fast execution as CPP with rapid development as python. <a href="http://snap.stanford.edu/snappy/index.html" target="_blank">SNAP</a> is a powerful tool which is aimed to be built this direction. For researches in network science, it provides tools to do general purpose and high performance system for analysis and manipulation of large networks.</p>
 
@@ -91,7 +91,7 @@
   <entry>
     <title type="html"><![CDATA[Twitter Data Collection and Storage]]></title>
     <link href="http://vijaym.in/blog/2013/09/15/twitterdatacollection/"/>
-    <updated>2013-09-15T15:36:00-05:00</updated>
+    <updated>2013-09-15T15:36:00-07:00</updated>
     <id>http://vijaym.in/blog/2013/09/15/twitterdatacollection</id>
     <content type="html"><![CDATA[<p>Data collection and storage is the key to many projects. You have tons of data out there and you just want the part that is key to the problem. Yes, we are working a twitter virulence project to determine how virulent a tweet will go. In other words number of retweets it is going to have. We looked at <a href="http://snap.stanford.edu/data/twitter7.html" target="_blank">SNAP dataset</a> it has 467 million tweets collected from 20 million people covered over 7 month period. But the problem was this dataset was huge and most of it was junks, some spam messages too. Finding viral tweets and separating it out for the project was more than a herculean task.</p>
 

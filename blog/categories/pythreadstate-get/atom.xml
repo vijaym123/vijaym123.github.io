@@ -4,7 +4,7 @@
   <title><![CDATA[Category: PyThreadState_Get | Vijay Mahantesh]]></title>
   <link href="http://vijaym.in/blog/categories/pythreadstate-get/atom.xml" rel="self"/>
   <link href="http://vijaym.in/"/>
-  <updated>2014-05-26T03:32:07-05:00</updated>
+  <updated>2015-10-04T10:16:45-07:00</updated>
   <id>http://vijaym.in/</id>
   <author>
     <name><![CDATA[Vijay Mahantesh SM]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Oh SNAP!]]></title>
     <link href="http://vijaym.in/blog/2014/05/26/oh-snap/"/>
-    <updated>2014-05-26T01:38:00-05:00</updated>
+    <updated>2014-05-26T01:38:00-07:00</updated>
     <id>http://vijaym.in/blog/2014/05/26/oh-snap</id>
     <content type="html"><![CDATA[<p>For years, I have been using <a href="https://networkx.github.io/" target="_blank">NetworkX</a> and hadn’t found any good substitute which has fast execution as CPP with rapid development as python. <a href="http://snap.stanford.edu/snappy/index.html" target="_blank">SNAP</a> is a powerful tool which is aimed to be built this direction. For researches in network science, it provides tools to do general purpose and high performance system for analysis and manipulation of large networks.</p>
 
